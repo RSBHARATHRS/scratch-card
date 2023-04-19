@@ -1,9 +1,11 @@
 <div class="wrapper">
+  <h1>Scratch the card to see your fortune.</h1>
+  <!-- <img *ngIf="!isScratched" src="/assets/gif/giphy.gif" alt="" class="arrow"> -->
   <div class="container" id="js-container">
     <canvas class="canvas" id="js-canvas" width="400px" height="300px"></canvas>
     <form class="form" style="visibility: hidden;">
       <img id="fortune" [src]="fortune" alt="">
     </form>
   </div>
-  <!-- <button (click)="reset()">reset</button> -->
+  <p>Please keep in mind that each person is only allowed one fortune.</p>
 </div>

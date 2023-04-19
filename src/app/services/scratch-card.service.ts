@@ -46,7 +46,6 @@ export class ScratchCardService {
       fortuneImgUrl = this.fortunes[this.getRandomIndex(0, this.fortunes.length - 1)];
       localStorage.setItem("fortune", fortuneImgUrl);
     }
-
     return fortuneImgUrl;
   }
 }

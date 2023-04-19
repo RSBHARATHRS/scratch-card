@@ -21,6 +21,8 @@ export class SimpleScratchCardComponent implements OnInit {
   image = new Image();
   brush = new Image();
 
+  isScratched: boolean = false;
+
   // handleMouseDown = (e: any) => {
   //   this.isDrawing = true;
   //   this.lastPoint = this.getMouse(e, this.canvas);
@@ -32,7 +34,7 @@ export class SimpleScratchCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.fortune = this.scratchCardService.getFortune();
-    console.log("Index no:",this.fortune)
+    console.log("Index no:", this.fortune)
   }
 
   ngAfterViewInit() {
@@ -40,6 +42,7 @@ export class SimpleScratchCardComponent implements OnInit {
     this.canvas = <HTMLCanvasElement>document.getElementById('js-canvas');
     this.canvasWidth = this.canvas.width;
     this.canvasHeight = this.canvas.height;
+
     this.ctx = this.canvas.getContext('2d');
     this.loadImage();
     this.addEventListners();
@@ -115,6 +118,7 @@ export class SimpleScratchCardComponent implements OnInit {
     console.log(filledInPixels + '%');
     if (filledInPixels > 70 && this.canvas) {
       this.container.removeChild(this.canvas);
+      this.isScratched = true;
       // this.canvas = new HTMLCanvasElement
     }
   }
@@ -148,13 +152,5 @@ export class SimpleScratchCardComponent implements OnInit {
   handleMouseUp = (e: any) => {
     this.isDrawing = false;
   }
-
-  reset() {
-    this.image = new Image();
-    this.brush = new Image();
-    this.loadImage();
-
-  }
-
 
 }
