@@ -32,7 +32,7 @@ export class SimpleScratchCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.fortune = this.scratchCardService.getFortune();
-    console.log(this.fortune)
+    console.log("Index no:",this.fortune)
   }
 
   ngAfterViewInit() {
@@ -49,7 +49,7 @@ export class SimpleScratchCardComponent implements OnInit {
     this.image.src = images.angImg;
     this.brush.src = images.brush;
     this.image.onload = () => {
-      this.ctx.drawImage(this.image, 0, 0);
+      this.ctx.drawImage(this.image, 18, 16);
       // Show the form when Image is loaded.
       document.getElementById('fortune')!.style.visibility = 'visible';
     };
@@ -153,7 +153,7 @@ export class SimpleScratchCardComponent implements OnInit {
     this.image = new Image();
     this.brush = new Image();
     this.loadImage();
-    
+
   }
 
 

@@ -5,9 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class ScratchCardService {
 
-  fortunes = ['https://www.google.co.in/url?sa=i&url=https%3A%2F%2Fparade.com%2F937586%2Fparade%2Flife-quotes%2F&psig=AOvVaw1WD8zi9OJhlPWW6uHpAt3D&ust=1681996465430000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCKC_haGDtv4CFQAAAAAdAAAAABAE', 
-  'https://blog.hubspot.com/hs-fs/hubfs/quotes-on-life-14-maya-angelou.jpg?width=650&height=545&name=quotes-on-life-14-maya-angelou.jpg', 
-  'https://blog.hubspot.com/hs-fs/hubfs/quotes-on-life-14-maya-angelou.jpg?width=650&height=545&name=quotes-on-life-14-maya-angelou.jpg']
+  fortunes = ['https://www.rd.com/wp-content/uploads/2021/01/100-of-the-Most-Uplifting-Quotes-Ever5-scaled.jpg?fit=700,700',
+    'https://blog.hubspot.com/hs-fs/hubfs/quotes-on-life-14-maya-angelou.jpg?width=650&height=545&name=quotes-on-life-14-maya-angelou.jpg',
+    'https://thegoalchaser.com/wp-content/uploads/positive-life-quotes-1-1024x1024.png',
+    "https://static.wixstatic.com/media/72c0b2_4704c5328f4343ac8f9fe424501f953d~mv2.png/v1/fill/w_772,h_435,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/72c0b2_4704c5328f4343ac8f9fe424501f953d~mv2.png",
+    "https://gatheringdreams.com/wp-content/uploads/2019/10/dream-quotes-square.jpg",
+    "https://quotefancy.com/media/wallpaper/1600x900/2595700-Chris-Martin-Quote-Everything-that-s-happening-to-you-is-what-s.jpg",
+    "https://i.pinimg.com/originals/23/f5/4e/23f54e5150b5dd04118a0cde176fb34e.jpg",
+    "https://img.freepik.com/premium-vector/positive-motivational-quotes-lettering-tshirt-design-inspirational-quotes-lettering-design_542607-1501.jpg?w=2000",
+    "https://www.yourtango.com/sites/default/files/styles/body_image_default/public/2020/inspirational-quotes-life-you-only-live-once-mae-west.jpg"]
 
   constructor() { }
 
