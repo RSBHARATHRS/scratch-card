@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { images } from 'src/app/data/mocks';
+import { ScratchCardService } from 'src/app/services/scratch-card.service';
 
 
 @Component({
@@ -24,12 +25,14 @@ export class SimpleScratchCardComponent implements OnInit {
   //   this.isDrawing = true;
   //   this.lastPoint = this.getMouse(e, this.canvas);
   // }
+  fortune = '';
 
-  constructor() {
+  constructor(private scratchCardService: ScratchCardService) {
   }
 
   ngOnInit(): void {
-
+    this.fortune = this.scratchCardService.getFortune();
+    console.log(this.fortune)
   }
 
   ngAfterViewInit() {
@@ -43,12 +46,12 @@ export class SimpleScratchCardComponent implements OnInit {
   }
 
   loadImage() {
-    this.image.src = "https://images.ctfassets.net/szez98lehkfm/YiGVZa8JNgnR2vaHVqLE9/8973e15880269204d78b9c88251ed173/scrach_card.png" || images.img;
+    this.image.src = images.angImg;
     this.brush.src = images.brush;
     this.image.onload = () => {
       this.ctx.drawImage(this.image, 0, 0);
       // Show the form when Image is loaded.
-      // document.querySelectorAll('.form')[0].style.visibility = 'visible';  
+      document.getElementById('fortune')!.style.visibility = 'visible';
     };
   }
 
@@ -110,8 +113,9 @@ export class SimpleScratchCardComponent implements OnInit {
   handlePercentage(filledInPixels: any) {
     filledInPixels = filledInPixels || 0;
     console.log(filledInPixels + '%');
-    if (filledInPixels > 50) {
-      this.canvas.removeChild(this.canvas);
+    if (filledInPixels > 70 && this.canvas) {
+      this.container.removeChild(this.canvas);
+      // this.canvas = new HTMLCanvasElement
     }
   }
 
@@ -143,6 +147,13 @@ export class SimpleScratchCardComponent implements OnInit {
 
   handleMouseUp = (e: any) => {
     this.isDrawing = false;
+  }
+
+  reset() {
+    this.image = new Image();
+    this.brush = new Image();
+    this.loadImage();
+    
   }
 
 
